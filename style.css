@@ -1,3 +1,6 @@
+div{
+    /* border: 2px solid red; */
+}
 body{
     height: 100%;
     width: 100%;
@@ -50,4 +53,63 @@ h1{
     color: white;
     font-weight: bold;
     border: 5px solid white;
+}
+.main-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: white; */
+    min-height: 80%;
+    min-width: 80%;
+    gap:  5%;
+}
+.text-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 100px;
+    height: 100%;
+    width: 100%;
+}
+.hangman{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.letters-super{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.letters{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    color: white;
+}
+.guess{
+    color: white;
+    font-size: 90px;
+}
+.letters>div{
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
+.outer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 300%;
+    font-weight: bold;
+}
+.outer:hover{
+    color: white;
+    font-weight: bold;
+    border: 8px solid white;
+    cursor: pointer;
 }

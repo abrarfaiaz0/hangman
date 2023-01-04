@@ -7,10 +7,15 @@ var guess = "______";
 var chances = 8, correct = false;
 var img = document.querySelector("#image");
 img.setAttribute("src","src/"+chances+".png");
+var score=0;
 
 
 var g = document.querySelector(".guess"); 
 g.innerHTML = guess;
+
+function endGame(){
+
+}
 
 function countLetterPressed(e){
     // console.log(e.currentTarget.pressedLetter);
@@ -21,9 +26,14 @@ function countLetterPressed(e){
     checkLetter(e.currentTarget.pressedLetter);
     if(correct == false)
         {
+            
             chances -= 1 ;
             img.setAttribute("src","src/"+chances+".png");
             console.log("lives remaining : "+chances);
+            if(chances==0)
+            {
+                endGame();
+            }
         }
     
     
@@ -36,6 +46,7 @@ function checkLetter(e){
     for(var i=0; i<word.length;i++) {
         if (word[i] === e) 
         {
+            score += 1;
             guess = guess.substring(0,i)+e+guess.substring(i+1,word.length);
             g.innerHTML = guess; 
             console.log(word.length);
